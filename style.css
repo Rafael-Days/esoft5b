@@ -138,6 +138,10 @@ nav a:hover {
   align-self: center;
 }
 
+#pokemonImage img {
+  transform: scale(1.1);
+}
+
 #info-squirtle div {
   display: flex;
   justify-content: space-evenly;

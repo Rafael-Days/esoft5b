@@ -1,27 +1,22 @@
-const h1T = document.querySelector('h1')
-//h1.style.color = 'red'
-h1T.textContent = 'Wartortle'
+const urlParams = new URLSearchParams(window.location.search);
 
-let params = new URLSearchParams(queryString);
-let nameParam = parseInt(params.get("name")); 
+const evolucao= urlParams.get('name');
 
-window.alert(nameParam);
+if (evolucao) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${evolucao}`)
+        .then(response => response.json())
+        .then(data => {
+            
 
-document.querySelector('h1').remove()
-///////////////////////
-/*
-const h1T = document.createElement('h1')
+            const header = document.getElementById('header');
+            header.querySelector('h1').textContent = data.name.charAt(0).toUpperCase() + data.name.slice(1);
 
-h1T.textContent = 'Wartortle'
-*/
+            const pokemonImage = document.getElementById('pokemonImage');
+            pokemonImage.innerHTML = `<img src="${data.sprites.front_default}" alt="${evolucao}">`;
 
-////////////////////////////////////
-let queryString = window.location.search;
-
-if (queryString.hasOwnProperty('wartortle')) {
-    replaceHeaderText(queryString['wartortle']);
+            novaImagem.src = data.sprites.front_default; 
+            novaImagem.alt = evolucao; 
+            document.body.appendChild(novaImagem);
+        })
+        .catch(error => console.error('Erro ao recuperar  dados:', error));
 }
-
-let url = document.queryString()
-
-fetch("https://pokeapi.co/api/v2/pokemon/wartortle");
