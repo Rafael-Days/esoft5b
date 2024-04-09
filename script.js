@@ -2,6 +2,20 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const evolucao= urlParams.get('name');
 
+getChangeTitle();
+
+function getChangeTitle(){
+    const urlSearch = new URLSearchParams(location.search);
+    const pokemonName = urlSearch.get('name');
+    changeTitle(pokemonName);
+    console.log({pokemonName})
+}
+
+
+function changeTitle(pokemonName){
+    document.title = 'Pagina do ' + pokemonName;
+}
+
 if (evolucao) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${evolucao}`)
         .then(response => response.json())
