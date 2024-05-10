@@ -37,5 +37,5 @@ function salvarTarefa() {
 
     form.reset();
 
-    alert('Tarefa salva com sucesso!');
+    alert('Tarefa salva com sucesso e formulario limpo!');
 }
