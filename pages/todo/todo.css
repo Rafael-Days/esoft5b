@@ -26,3 +26,29 @@ main article {
   display: grid;
   padding: 5px;
 }
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input,
+textarea{
+  display: flex;
+  max-width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+
+#tarefa{
+  display: flex;
+  justify-content: center;
+  background-color: #0074d9;
+  color: white;
+}
+
+::placeholder{
+  white-space: pre-wrap;
+}
+
+

@@ -1,5 +1,5 @@
 
-
+/*
 localStorage.setItem(lsTarefasKey, JSON.stringify(lsTarefasObj))
 
 salvarTarefa()
@@ -18,4 +18,24 @@ function salvarTarefa() {
   
       //mostrarTarefas();
     }
-  }
+  }*/
+
+  function enviar(e) {
+    e.preventDefault();
+  
+    const form = e.target;
+    const formData = new FormData(form);
+  
+    const nome = formData.get('name');
+    const descricao = formData.get('desc');
+
+    let listaDeTarefas = JSON.parse(localStorage.getItem('listaDeTarefas')) || [];
+
+    listaDeTarefas.push({ nome: nome, descricao: descricao });
+
+    localStorage.setItem('listaDeTarefas', JSON.stringify(listaDeTarefas));
+
+    form.reset();
+
+    alert('Tarefa salva com sucesso!');
+}

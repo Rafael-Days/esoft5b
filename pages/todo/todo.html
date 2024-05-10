@@ -23,14 +23,16 @@
         </ul>
     </nav>
 
-    <section id="todo-sec" aria-labelledby="todo-sec-label">
+    <section id="todo-sec" aria-labelledby="todo-sec-label" onsubmit="enviar(event)">
         <form action="" method="get" class="form-todo">
             <div class="form-todo">
-              <label for="name">Digite uma tarefa: </label>
-              <input type="text" name="name" id="digite-tarefa" required />
+              <label for="name"></label>
+              <input type="text" name="name" id="digite-tarefa" required placeholder="Informe o título da tarefa"/>
+              <label for="desc"></label>
+              <textarea type="text" name="desc" id="digite-desc" required placeholder="Informe a descrição da tarefa"></textarea>
             </div>
             <div class="form-todo">
-                <input id="tarefa" type="submit" value="Adicionar Tarefa" />
+              <input id="tarefa" type="submit" value="Salvar Tarefa" />
             </div>
         </form>
     </section>
