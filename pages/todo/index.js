@@ -14,11 +14,14 @@ function addTask(event) {
 
   const li = document.createElement('li')
 
+  const button = document.createElement('button')
+
   li.id = taskId
   li.innerHTML = `
       <h2>${taskTitle}</h2>
       <p>${taskDescription}</p>
   `
+  button.id = taskId
 
   taskList.appendChild(li)
 

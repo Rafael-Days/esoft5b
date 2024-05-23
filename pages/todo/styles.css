@@ -91,3 +91,7 @@ li p {
   white-space: pre-wrap;
   margin-top: 10px;
 }
+
+#button-edit {
+  background-color: #676767;
+}
