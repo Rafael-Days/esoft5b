@@ -91,6 +91,11 @@ li p {
   white-space: pre-wrap;
   margin-top: 10px;
 }
+/*
+li button {
+  position: absolute;
+  top: 10px;
+}*/
 
 #taskList button {
   background-color: #676767;

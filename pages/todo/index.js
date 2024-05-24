@@ -20,7 +20,7 @@ function addTask(event) {
   li.innerHTML = `
       <h2>${taskTitle}</h2>
       <p>${taskDescription}</p>
-      <button>✏️</button>
+      <button type="button">✏️</button>
   `
 
 
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const tasks = JSON.parse(localStorage.getItem(taskKey)) || []
   const taskList = document.querySelector('#taskList') 
   taskList.innerHTML = tasks
-    .map((task) => `<li><h2>${task.title}</h2><p>${task.description}</p><button>✏️</button></li>`)
+    .map((task) => `<li><h2>${task.title}</h2><p>${task.description}</p><button type="button">✏️</button></li>`)
     .join('')
 })
 
